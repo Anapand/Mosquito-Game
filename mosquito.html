@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+        background-color: aqua;
+      }
+      .playground {
+        position: relative;
+        background-color: green;
+        height: 600px;
+        width: 600px;
+        float: left;
+        margin-left: 300px;
+        margin-right: 50px;
+      }
+      .mosquito {
+        position: relative;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+      }
+      .btn {
+        background-color: red;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .tot {
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 50px;
+      }
+      h1 {
+        margin-left: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Play Ground</h1>
+    <div class="playground">
+      <img
+        id="mosquito"
+        class="mosquito"
+        onclick="hitMosquito()"
+        src="data:image/jpeg;base64,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"
+        alt=""
+      />
+    </div>
+    <div class="controls">
+      <h2 id="gameStatus">Game Status</h2>
+      <h1><span class="tot">Total</span><span id="totalHit"></span></h1>
+      <button onclick="startGame()" class="btn">Start Game</button>
+    </div>
+    <script>
+      let hitCount = 0;
+      let isGameStart = false;
+      function startGame() {
+        document.getElementById("gameStatus").innerText = "Game Started";
+        hitCount = 0;
+        isGameStart = true;
+        let mosquito = document.getElementById("mosquito");
+        let time = setInterval(() => {
+          let i = Math.floor(Math.random() * 500) + 1;
+          let j = Math.floor(Math.random() * 500) + 1;
+          mosquito.style.left = i + "px";
+          mosquito.style.top = j + "px";
+        }, 1000);
+        setTimeout(() => {
+          clearTimeout(time);
+          isGameStart = false;
+          document.getElementById("gameStatus").innerText = "Game Over";
+        }, 30000);
+      }
+      function hitMosquito() {
+        if (isGameStart) {
+          hitCount++;
+          document.getElementById("totalHit").innerText = hitCount;
+        }
+      }
+    </script>
+  </body>
+</html>
